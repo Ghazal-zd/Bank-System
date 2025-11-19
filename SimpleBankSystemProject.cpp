@@ -579,7 +579,7 @@ void performTransactionMenuOption(enTransactionMenuOptions transactionMenuOption
 	}
 }
 short readMainMenuOption() {
-	cout << "\n\n Choose what you want to do? [1 To 6]?  ";
+	cout << "\n\n Choose what you want to do? [1 To 8]?  ";
 	short choice = 0;
 	cin >> choice;
 	return choice;
@@ -974,10 +974,11 @@ void showFindUserScreen() {
 	cout << "\n=======================================\n";
 	vector<sUser> vUsers = loadDataFromUserFile(userFile);
 	string userName = readUserName();
+	sUser user;
 
-	if (findUserByUserName(vUsers, userName, currentUser))
+	if (findUserByUserName(vUsers, userName, user))
 	{
-		printUserCard(currentUser);
+		printUserCard(user);
 	}
 	else
 	{
